@@ -1,0 +1,8 @@
+en:
+  properties:
+    show:
+      title: Property details
+      name: 'Name:'
+      building_complex: 'Building complex:'
+      developer: 'Developer:'
+      description: 'Description:'

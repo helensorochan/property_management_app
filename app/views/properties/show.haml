@@ -1,0 +1,16 @@
+.sheet_title
+  - content_for :page_title, t('.title')
+
+.sheet_content
+  .name
+    = t('.name')
+    = @property.name
+  .building_complex
+    = t('.building_complex')
+    = @building_complex.name
+  .developer
+    = t('.developer')
+    = @developer.name
+  .description
+    = t('.description')
+    = @property.description

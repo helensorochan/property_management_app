@@ -1,0 +1,9 @@
+en:
+  building_complexes:
+    index:
+      title: "Building complexes list for %{developer}"
+      records_not_round: Records not found
+      name: Building complex name
+      properties: Properties list
+      show_properties: Show properties
+      create_building_complex: Create building complex

@@ -1,0 +1,6 @@
+en:
+  properties:
+    edit:
+      title: Edit property
+      delete: Delete
+      confirm_delete: 'Are you sure?'

@@ -1,0 +1,19 @@
+.profile_settings
+  - content_for :profile_settings, true
+.sheet_title
+  - content_for :page_title, t('.title')
+
+.sheet_content
+  - if @developers.present?
+    %table
+      %thead
+        %th= t('.developer_name')
+        %th= t('.building_complexes')
+      %body
+        - @developers.each do |developer|
+          %tr
+            %td= link_to developer.name, developer_path(developer)
+            %td= link_to t('.show_building_complexes', count: developer.building_complexes_count),
+                         developer_building_complexes_path(developer)
+  - else
+    %p= t('.records_not_found')

@@ -1,0 +1,25 @@
+.sheet_title
+  - content_for :page_title,
+                t('.title', developer: @developer.name, building_complex: @building_complex.name)
+
+- if PropertyPolicy.new(current_user, @properties.new).new?
+  = link_to t('.add_property'),
+            new_developer_building_complex_property_path(@developer, @building_complex)
+.sheet_content
+  - if @properties.present?
+    %table
+      %thead
+        %th= t('.name')
+      %body
+        - @properties.each do |property|
+          %tr
+            %td
+              - if PropertyPolicy.new(current_user, property).edit?
+                = link_to property.name,
+                        edit_developer_building_complex_property_path(@developer, @building_complex, property)
+              - else
+                = link_to property.name,
+                          developer_building_complex_property_path(@developer, @building_complex, property)
+
+  - else
+    %p= t('.records_not_found')

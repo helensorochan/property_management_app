@@ -1,0 +1,8 @@
+en:
+  developers:
+    index:
+      title: Developers list
+      records_not_round: Records not found
+      developer_name: Developer name
+      building_complexes: Building complexes
+      show_building_complexes: 'Building complexes (%{count})'

@@ -1,0 +1,9 @@
+.sheet_title
+  - content_for :page_title, t('.title')
+
+- if BuildingComplexPolicy.new(current_user, @building_complex).destroy?
+  = link_to t('.delete'),
+            developer_building_complex_path(@developer, @building_complex),
+            data: { confirm: t('.confirm_delete') },
+            method: :delete
+= render 'form', url: developer_building_complex_path(@developer, @building_complex)

@@ -1,0 +1,7 @@
+en:
+  properties:
+    index:
+      title: "Properties list for %{building_complex} building complex. %{developer} developer"
+      records_not_found: Records not found
+      name: Property name
+      add_property: Add property

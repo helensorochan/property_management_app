@@ -1,0 +1,22 @@
+en:
+  devise:
+    shared:
+      links:
+        log_in: Log in
+        sign_up: Sign up
+        forgot_password: 'Forgot your password?'
+    sessions:
+      new:
+        log_in: Log in
+    registrations:
+      new:
+        sign_up: Sign up
+      edit:
+        title: "Edit %{name}"
+        update: Update
+        leave_blank_password: "(leave blank if you don't want to change it)"
+        confirm_changes: "(we need your current password to confirm your changes)"
+    passwords:
+      new:
+        forgot_password: 'Forgot your password?'
+        send_password_instructions: Send me reset password instructions

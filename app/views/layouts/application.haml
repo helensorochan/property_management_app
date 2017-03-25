@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PropertyManagementApp
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    - if content_for?(:profile_settings)
+      %p
+        = link_to "Edit profile", edit_registration_path(current_user)
+      %p
+        = button_to "Cancel account",
+                    registration_path(current_user),
+                    data: { confirm: "Are you sure?" },
+                    method: :delete
+    = content_for :page_title
+    = yield

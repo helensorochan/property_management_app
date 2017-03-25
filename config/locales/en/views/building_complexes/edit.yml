@@ -1,0 +1,6 @@
+en:
+  building_complexes:
+    edit:
+      title: Edit building complex
+      delete: Delete
+      confirm_delete: 'Are you sure?'

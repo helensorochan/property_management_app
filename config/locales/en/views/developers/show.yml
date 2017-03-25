@@ -1,0 +1,6 @@
+en:
+  developers:
+    show:
+      title: Developer info
+      name: 'Name:'
+      contact_info: 'Contact_info:'
