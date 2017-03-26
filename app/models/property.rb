@@ -7,4 +7,6 @@ class Property < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: { scope: :building_complex_id }
   validates :building_complex_id, presence: true
+
+  acts_as_taggable_on :features
 end

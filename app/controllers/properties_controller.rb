@@ -79,6 +79,7 @@ class PropertiesController < ApplicationController
     params.require(:property)
           .permit(:name,
                   :description,
+                  :feature_list,
                   attachments_attributes: [:file, :tempfile, :original_filename, :headers, :_destroy, :id])
   end
 end
