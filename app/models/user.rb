@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   enum role: { viewer: 0, developer: 1 }
 
-  has_many :building_complexes
+  has_many :building_complexes, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :role, presence: true

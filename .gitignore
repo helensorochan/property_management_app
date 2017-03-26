@@ -2,6 +2,7 @@
 /log
 /tmp
 /bin
+/public/attachment
 
 #Config files
 config/database.yml

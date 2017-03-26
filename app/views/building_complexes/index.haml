@@ -20,8 +20,9 @@
               - else
                 = link_to building_complex.name,
                           developer_building_complex_path(@developer, building_complex)
-            %td= link_to t('.show_properties'),
-                         developer_building_complex_properties_path(@developer, building_complex)
+            %td
+              = link_to t('.show_properties'),
+                        developer_building_complex_properties_path(@developer, building_complex)
 
   - else
     %p= t('.records_not_found')

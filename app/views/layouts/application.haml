@@ -8,12 +8,11 @@
     = csrf_meta_tags
   %body
     - if content_for?(:profile_settings)
-      %p
-        = link_to "Edit profile", edit_registration_path(current_user)
-      %p
-        = button_to "Cancel account",
+      %p= link_to "Edit profile", edit_registration_path(current_user)
+      %p= button_to "Cancel account",
                     registration_path(current_user),
                     data: { confirm: "Are you sure?" },
                     method: :delete
+      %p= link_to "Logout", destroy_user_session_path
     = content_for :page_title
     = yield

@@ -10,6 +10,7 @@
     %table
       %thead
         %th= t('.name')
+        %th= t('.floors')
       %body
         - @properties.each do |property|
           %tr
@@ -20,6 +21,9 @@
               - else
                 = link_to property.name,
                           developer_building_complex_property_path(@developer, @building_complex, property)
+            %td
+              = link_to t('.show_floors'),
+                        developer_building_complex_property_floors_path(@developer, @building_complex, property)
 
   - else
     %p= t('.records_not_found')

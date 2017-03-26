@@ -11,15 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321185953) do
+ActiveRecord::Schema.define(version: 20170326002524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  add_index "attachments", ["imageable_type", "imageable_id"], name: "index_attachments_on_imageable_type_and_imageable_id", using: :btree
 
   create_table "building_complexes", force: :cascade do |t|
     t.string  "name"
     t.string  "description"
     t.integer "user_id"
+  end
+
+  create_table "floors", force: :cascade do |t|
+    t.integer "start_from"
+    t.integer "end_to"
+    t.string  "description"
+    t.integer "property_id"
   end
 
   create_table "properties", force: :cascade do |t|

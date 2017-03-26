@@ -1,0 +1,5 @@
+.nested-fields
+  - if f.object.persisted?
+    = image_tag f.object.file.url(:medium)
+  = f.input :file, as: :file
+  = link_to_remove_association t('.remove_floor_plan'), f

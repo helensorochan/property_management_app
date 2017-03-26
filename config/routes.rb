@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :developers, only: [:show, :index] do
     resources :building_complexes do
-      resources :properties
+      resources :properties do
+        resources :floors
+      end
     end
   end
 end

@@ -1,0 +1,7 @@
+en:
+  floors:
+    index:
+      title: "Floors list for %{building_complex} building complex %{property} property. %{developer} is developer"
+      records_not_found: Records not found
+      name: Floor range
+      add_floor: Add floor

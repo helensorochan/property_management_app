@@ -1,0 +1,12 @@
+= simple_form_for @floor, url: url do |f|
+  = f.input :start_from, as: :string
+  = f.input :end_to, as: :string
+  %h3
+    = t('.attachments')
+  #attachments
+    = f.fields_for :attachments do |attachment|
+      = render 'attachment_fields', f: attachment
+    .links
+      = link_to_add_association t('.add_floor_plan'), f, :attachments
+  = f.input :description
+  = f.button :submit

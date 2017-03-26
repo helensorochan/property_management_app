@@ -1,4 +1,11 @@
 = simple_form_for @property, url: url do |f|
   = f.input :name
+  %h3
+    = t('.attachments')
+  #attachments
+    = f.fields_for :attachments do |attachment|
+      = render 'attachment_fields', f: attachment
+    .links
+      = link_to_add_association t('.add_property_photo'), f, :attachments
   = f.input :description
   = f.button :submit

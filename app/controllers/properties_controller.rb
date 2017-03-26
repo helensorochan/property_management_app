@@ -76,6 +76,9 @@ class PropertiesController < ApplicationController
   end
 
   def property_params
-    params.require(:property).permit(:name, :description)
+    params.require(:property)
+          .permit(:name,
+                  :description,
+                  attachments_attributes: [:file, :tempfile, :original_filename, :headers, :_destroy, :id])
   end
 end

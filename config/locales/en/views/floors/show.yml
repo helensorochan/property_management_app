@@ -1,0 +1,9 @@
+en:
+  floors:
+    show:
+      title: Floor details
+      name: 'Range:'
+      property: 'Property: '
+      building_complex: 'Building complex:'
+      developer: 'Developer:'
+      description: 'Description:'

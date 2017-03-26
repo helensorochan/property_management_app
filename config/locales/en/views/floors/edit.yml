@@ -1,0 +1,6 @@
+en:
+  floors:
+    edit:
+      title: Edit floor
+      delete: Delete
+      confirm_delete: 'Are you sure?'

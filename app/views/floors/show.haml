@@ -3,7 +3,10 @@
 
 .sheet_content
   .name
-    = t('.name')
+    = t('.range')
+    = @floor.range
+  .property
+    = t('.property')
     = @property.name
   .building_complex
     = t('.building_complex')
@@ -13,7 +16,7 @@
     = @developer.name
   .description
     = t('.description')
-    = @property.description
+    = @floor.description
 
-= @property.attachments.each do |attachment|
+- @floor.attachments.each do |attachment|
   = image_tag attachment.file.url(:medium)

@@ -1,0 +1,10 @@
+.sheet_title
+  - content_for :page_title, t('.title')
+
+- if FloorPolicy.new(current_user, @floor).destroy?
+  = link_to t('.delete'),
+            developer_building_complex_property_floor_path(@developer, @building_complex, @property, @floor),
+            data: { confirm: t('.confirm_delete') },
+            method: :delete
+
+= render 'form', url: developer_building_complex_property_floor_path(@developer, @building_complex, @property, @floor)

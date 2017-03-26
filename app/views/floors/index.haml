@@ -1,0 +1,28 @@
+.sheet_title
+  - content_for :page_title,
+                t('.title',
+                  developer: @developer.name,
+                  building_complex: @building_complex.name,
+                  property: @property.name)
+
+- if FloorPolicy.new(current_user, @floors.new).new?
+  = link_to t('.add_floor'),
+            new_developer_building_complex_property_floor_path(@developer, @building_complex, @property)
+.sheet_content
+  - if @floors.present?
+    %table
+      %thead
+        %th= t('.floor_range')
+      %body
+        - @floors.each do |floor|
+          %tr
+            %td
+              - if FloorPolicy.new(current_user, floor).edit?
+                = link_to floor.range,
+                        edit_developer_building_complex_property_floor_path(@developer, @building_complex, @property, floor)
+              - else
+                = link_to floor.range,
+                          developer_building_complex_property_floor_path(@developer, @building_complex, @property, floo)
+
+  - else
+    %p= t('.records_not_found')
