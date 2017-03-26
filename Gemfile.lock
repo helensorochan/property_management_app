@@ -46,6 +46,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.9)
     concurrent-ruby (1.0.5)
+    database_cleaner (1.5.3)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -53,7 +54,15 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
+      railties (>= 3.0.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -119,6 +128,23 @@ GEM
     rake (12.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-core (3.5.2)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -150,7 +176,10 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   cocoon
+  database_cleaner
   devise
+  factory_girl_rails
+  faker
   haml
   jquery-rails
   kaminari
@@ -158,6 +187,7 @@ DEPENDENCIES
   pg
   pundit
   rails (= 4.2.6)
+  rspec-rails
   sass-rails (~> 5.0)
   simple_form
 

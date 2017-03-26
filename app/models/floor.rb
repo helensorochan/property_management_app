@@ -4,7 +4,7 @@ class Floor < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, allow_destroy: true, reject_if: :all_blank
 
   validates :start_from, numericality: { only_integer: true, greater_than: 0 }
-  validates :end_to, numericality: { only_integer: true, greater_than: :start_from }
+  validates :end_to, numericality: { only_integer: true, greater_than_or_equal_to: :start_from }
   validates :property_id, :start_from, :end_to, presence: true
   validate :property_overlap_ranges
 
