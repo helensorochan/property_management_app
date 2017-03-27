@@ -1,13 +1,19 @@
 .sheet_title
   - content_for :page_title, t('.title')
 
-.sheet_content
+.sheet_content.listing
   .building_complex
-    = t('.building_complex')
-    = @building_complex.name
+    %span.item-title
+      = t('.building_complex')
+    %span.item-content
+      = @building_complex.name
   .developer
-    = t('.developer')
-    = @developer.name
+    %span.item-title
+      = t('.developer')
+    %span.item-content
+      = @developer.name
   .description
-    = t('.description')
-    = @building_complex.description
+    %span.item-title
+      = t('.description')
+    %span.item-content
+      = @building_complex.description

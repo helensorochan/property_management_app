@@ -1,19 +1,39 @@
 .sheet_title
   - content_for :page_title, t('.title')
 
-.sheet_content
+.sheet_content.listing
   .name
-    = t('.name')
-    = @property.name
+    %span.item-title
+      = t('.name')
+    %span.item-content
+      = @property.name
   .building_complex
-    = t('.building_complex')
-    = @building_complex.name
+    %span.item-title
+      = t('.building_complex')
+    %span.item-content
+      = @building_complex.name
   .developer
-    = t('.developer')
-    = @developer.name
+    %span.item-title
+      = t('.developer')
+    %span.item-content
+      = @developer.name
   .description
-    = t('.description')
-    = @property.description
+    %span.item-title
+      = t('.description')
+    %span.item-content
+      = @property.description
+  .longitude
+    %span.item-title
+      = t('.longitude')
+    %span.item-content
+      = @property.longitude
+  .latitude
+    %span.item-title
+      = t('.latitude')
+    %span.item-content
+      = @property.latitude
 
-= @property.attachments.each do |attachment|
+#maps
+
+- @property.attachments.each do |attachment|
   = image_tag attachment.file.url(:medium)

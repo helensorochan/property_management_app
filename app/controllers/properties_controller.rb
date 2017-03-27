@@ -80,6 +80,8 @@ class PropertiesController < ApplicationController
           .permit(:name,
                   :description,
                   :feature_list,
+                  :longitude,
+                  :latitude,
                   attachments_attributes: [:file, :tempfile, :original_filename, :headers, :_destroy, :id])
   end
 end

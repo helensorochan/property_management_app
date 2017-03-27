@@ -1,10 +1,14 @@
 .sheet_title
   - content_for :page_title, t('.title')
 
-.sheet_content
+.sheet_content.listing
   .name
-    = t('.name')
-    = @developer.name
+    %span.item-title
+      = t('.name')
+    %span.item-content
+      = @developer.name
   .contact_info
-    = t('.contact_info')
-    = @developer.email
+    %span.item-title
+      = t('.contact_info')
+    %span.item-content
+      = @developer.email

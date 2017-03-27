@@ -1,22 +1,32 @@
 .sheet_title
   - content_for :page_title, t('.title')
 
-.sheet_content
+.sheet_content.listing
   .name
-    = t('.range')
-    = @floor.range
+    %span.item-title
+      = t('.range')
+    %span.item-content
+      = @floor.range
   .property
-    = t('.property')
-    = @property.name
+    %span.item-title
+      = t('.property')
+    %span.item-content
+      = @property.name
   .building_complex
-    = t('.building_complex')
-    = @building_complex.name
+    %span.item-title
+      = t('.building_complex')
+    %span.item-content
+      = @building_complex.name
   .developer
-    = t('.developer')
-    = @developer.name
+    %span.item-title
+      = t('.developer')
+    %span.item-content
+      = @developer.name
   .description
-    = t('.description')
-    = @floor.description
+    %span.item-title
+      = t('.description')
+    %span.item-content
+      = @floor.description
 
 - @floor.attachments.each do |attachment|
   = image_tag attachment.file.url(:medium)

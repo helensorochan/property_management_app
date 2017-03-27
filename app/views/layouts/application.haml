@@ -5,14 +5,19 @@
     %title PropertyManagementApp
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_controller_specific_tag
     = csrf_meta_tags
   %body
     - if content_for?(:profile_settings)
-      %p= link_to "Edit profile", edit_registration_path(current_user)
-      %p= button_to "Cancel account",
-                    registration_path(current_user),
-                    data: { confirm: "Are you sure?" },
-                    method: :delete
-      %p= link_to "Logout", destroy_user_session_path
-    = content_for :page_title
+      .right-pannel
+        %p= link_to t('.edit_profile'),
+                    edit_registration_path(current_user),
+                    class: 'defaul-button left'
+        %p= link_to t('.cancel_account'),
+                      registration_path(current_user),
+                      data: { confirm: t('.confirm_delete') },
+                      method: :delete,
+                      class: 'danger-button left'
+        %p= link_to t('.logout'), destroy_user_session_path, class: 'blue-button left'
+    %h1= content_for :page_title
     = yield

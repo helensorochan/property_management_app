@@ -9,4 +9,6 @@
     .links
       = link_to_add_association t('.add_property_photo'), f, :attachments
   = f.input :description
+  = f.input :latitude, as: :string
+  = f.input :longitude, as: :string
   = f.button :submit

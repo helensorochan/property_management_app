@@ -1,0 +1,7 @@
+en:
+  layouts:
+    application:
+      edit_profile: Edit profile
+      cancel_account: Cancel account
+      confirm_delete: 'Are you sure?'
+      logout: Logout
